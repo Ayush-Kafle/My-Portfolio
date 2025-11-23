@@ -40,29 +40,32 @@
           </ul>
         </div>
 
-        <form class="card contact-form">
+        <form class="card contact-form" id="contactForm">
           <h2>Send a message</h2>
-          <!-- This is just UI; if you want real emails later, we can hook it to a backend or service -->
+          <input type="hidden" name="_subject" value="New portfolio contact" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
           <label>
             Name
-            <input type="text" placeholder="Your name" required />
+            <input type="text" name="name" placeholder="Your name" required />
           </label>
 
           <label>
             Email
-            <input type="email" placeholder="your@email.com" required />
+            <input type="email" name="email" placeholder="your@email.com" required />
           </label>
 
           <label>
             Message
-            <textarea rows="5" placeholder="Write your message here..." required></textarea>
+            <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
           </label>
 
-          <button type="submit" class="btn primary" disabled>
-            Send (coming soon)
+          <button type="submit" class="btn primary" id="contactSubmit">
+            Send message
           </button>
-          <p class="muted">
-            This form is a placeholder for now. You can contact me directly via email or LinkedIn above.
+          <p class="muted" id="contactStatus">
+            Messages are sent straight to my inbox.
           </p>
         </form>
       </div>
